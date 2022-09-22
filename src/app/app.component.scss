@@ -1,0 +1,17 @@
+.nav {
+  background-color: rgb(255, 255, 235);
+  height: 5rem;
+  box-shadow: 1px 10px 8px -3px rgba(0, 0, 0, 0.55);
+  border-bottom: 2px solid green;
+  .title{
+    cursor: pointer;
+  }
+  .home {
+    cursor: pointer;
+  }
+  .about {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+}

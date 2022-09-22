@@ -1,0 +1,37 @@
+<div class="container-fluid ">
+    <div class="row d-flex justify-content-center ">
+        <div class=" box col-6 d-flex justify-content-center align-items-center flex-column">
+            <div class="pb-4">Search Your Favourite Cocktail</div>
+            <div>
+                <input (input)="searchForData(name)" type="text" id="filter" #name autofocus>
+                <!-- keyup.enter -->
+                <!-- <button (click)="searchButton(name)">search</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center Cocktails pt-5">Cocktails</div>
+
+<div class="container ">
+    <div *ngIf="!isData" class=" myGrid">
+        <div class=" items " *ngFor=" let drinks of data">
+            <div class=" image col-6 mb-3 ">
+                <img [src]="drinks.strDrinkThumb" alt="Pic">
+            </div>
+            <div class=" details col-5 p-4">
+                <div class="name mb-1">{{drinks.strDrink}}</div>
+                <div class="glass-type  mb-1">{{drinks.strCategory}}</div>
+                <div class="drink-type mb-2"> {{drinks.strAlcoholic}}</div>
+                <button routerLink="/detail/{{drinks.idDrink}}" class="mt-2">DETAILS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="isData">No Cocktails Matched Your Search Criteria</div>
+</div>
+
+<!-- <div *ngIf="nodata()">
+    No data found.
+</div> -->
